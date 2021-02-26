@@ -1,0 +1,16 @@
+{% extends "articles/base.html" %}
+
+{% block content %}
+<h1>Create Article</h1>
+<form action="/articles/save/" method="post">
+    {% csrf_token %}
+    <label for="article_title">Title: </label>
+    <input id="article_title" type="text" name="article_title" value="{{ article_title }}">
+    <br />
+    <label for="content_snippet">Content Snippet: </label>
+    <input id="content_snippet" type="text" name="content_snippet" value="{{ content_snippet }}">
+    <br />
+    <input type="submit" value="Post">
+</form>
+
+{% endblock content %}

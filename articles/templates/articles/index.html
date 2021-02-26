@@ -1,0 +1,25 @@
+{% extends "articles/base.html" %}
+
+{% block content %}
+  <a href="/articles/create/">Create a New Article</a>
+  {% if articles_list %}
+    <ul>
+    {% for article in articles_list %}
+      <li>
+        <a href="/articles/article/{{ article.id }}/">{{ article.title }}</a>
+        <br />
+        {{ article.content_snippet }}
+        <br />
+        {{ article.created_date }}
+        <br />
+        <a href="/articles/edit/{{ article.id }}/">Edit</a>
+        <br />
+        <a href="/articles/delete/{{ article.id }}/">Delete</a>
+      </li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>No articles are available.</p>
+  {% endif %}
+
+{% endblock content %}

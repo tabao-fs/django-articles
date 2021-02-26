@@ -1,0 +1,11 @@
+{% extends "articles/base.html" %}
+
+{% block content %}
+  <h1>Article Detail</h1>
+  {{ article.title }}
+  <br />
+  {{ article.content_snippet }}
+  <br />
+  {{ article.created_date }}
+
+{% endblock content %}
